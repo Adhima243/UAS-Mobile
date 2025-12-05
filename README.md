@@ -1,5 +1,3 @@
-
-
 # 📱 Aplikasi Wisata Indonesia 
 
 Aplikasi mobile Flutter untuk menampilkan daftar tempat wisata di Indonesia secara real-time menggunakan Geoapify Places API.
@@ -15,80 +13,65 @@ Daftar tempat wisata berdasarkan lokasi
 - Profil aplikasi
 - Tanpa login
 
-🚀 Fitur Utama
-🏠 1. Home Page
+## 🚀 Fitur Utama
 
-```- Search bar 
+🏠 1. Home Page
+```
+- Search bar 
 - Pemilihan lokasi (Bali, Jakarta, Bandung, Yogyakarta, Surabaya, dll)
 - Kategori tempat wisata
 - Daftar rekomendasi wisata
-- Data diambil real-time menggunakan Geoapify Places API```
-
+- Data diambil real-time menggunakan Geoapify Places API
+```
 🔍 2. Search Page
-
-```- Pencarian nama tempat wisata atau kota
-
+```
+- Pencarian nama tempat wisata atau kota
 - Menggunakan Geoapify Autocomplete API
-
-- Hasil suggestion langsung tampil```
-
+- Hasil suggestion langsung tampil
+```
 📌 3. Detail Page
-
-Menampilkan detail wisata (nama, alamat, rating, kategori, coordinate)
-
-Menggunakan Geoapify Place Details API
-
+```
+- Menampilkan detail wisata (nama, alamat, rating, kategori, coordinate)
+- Menggunakan Geoapify Place Details API
+```
 ⭐ 4. Favorite Page
-
-Menyimpan tempat wisata favorit secara offline
-
-Menggunakan SharedPreferences / Hive
-
+```
+- Menyimpan tempat wisata favorit secara offline
+- Menggunakan SharedPreferences / Hive
+```
 👤 5. Profile Page
-
-Informasi tentang aplikasi
-
-API yang digunakan
-
-Versi aplikasi
-
-🌐 API yang Digunakan (Geoapify)
-
+```
+- Informasi tentang aplikasi
+- API yang digunakan
+- Versi aplikasi
+```
+## 🌐 API yang Digunakan (Geoapify)
 Berikut endpoint wajib yang digunakan aplikasi:
 
-✅ 1. Places API (List Tempat Wisata)
+1. Places API (List Tempat Wisata)
 
 Digunakan untuk halaman Home dan Kategori.
 
-https://api.geoapify.com/v2/places?categories={categories}&filter={filter}&limit={limit}&apiKey=API_KEY
+```https://api.geoapify.com/v2/places?categories={categories}&filter={filter}&limit={limit}&apiKey=API_KEY```
 
 
 Parameter:
+- categories → tourism.attraction, natural, entertainment, dll
+- filter → circle:lon,lat,radius
+- limit → jumlah data
+- apiKey → API key dari Geoapify
 
-categories → tourism.attraction, natural, entertainment, dll
-
-filter → circle:lon,lat,radius
-
-limit → jumlah data
-
-apiKey → API key dari Geoapify
-
-✅ 2. Autocomplete API (Search)
+2. Autocomplete API (Search)
 
 Digunakan untuk input pencarian.
 
-https://api.geoapify.com/v1/geocode/autocomplete?text={keyword}&apiKey=API_KEY
+```https://api.geoapify.com/v1/geocode/autocomplete?text={keyword}&apiKey=API_KEY```
 
-✅ 3. Place Details API (Detail Wisata)
-https://api.geoapify.com/v2/place-details?id={place_id}&apiKey=API_KEY
+3. Place Details API (Detail Wisata)
+```https://api.geoapify.com/v2/place-details?id={place_id}&apiKey=API_KEY```
 
-🟡 Optional – Reverse Geocoding API
-
-Digunakan jika mengambil nama lokasi dari GPS coordinates.
-
-https://api.geoapify.com/v1/geocode/reverse?lat={lat}&lon={lon}&apiKey=API_KEY
-
-📁 Struktur Folder Project
+## 📁 Struktur Folder Project
+```
 lib/
 │
 ├── main.dart
@@ -127,19 +110,21 @@ lib/
 │   └── profile/
 │
 └── widgets/
-
-🏛 Arsitektur Aplikasi
+```
+## 🏛 Arsitektur Aplikasi
 
 Pattern yang digunakan:
-
-Service Layer
-untuk fetch data dari API
-
-Model Layer
-untuk parsing JSON
-
-Provider / State Management
-loading, error, success
-
+- Service Layer = untuk fetch data dari API
+- Model Layer = untuk parsing JSON
+- Provider / State Management = loading, error, success
+- UI Layer = halaman Home, Search, Detail, Favorite, Profile
 UI Layer
 halaman Home, Search, Detail, Favorite, Profile
+
+## 🧪 Pengujian API (Success & Error)
+
+Aplikasi menangani tiga state:
+- Loading → CircularProgressIndicator
+- Success → data tampil
+- Error → pesan error / retry button
+- Empty → jika API tidak mengembalikan data
