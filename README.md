@@ -23,28 +23,39 @@ Daftar tempat wisata berdasarkan lokasi
 - Daftar rekomendasi wisata
 - Data diambil real-time menggunakan Geoapify Places API
 ```
+![Success](https://github.com/user-attachments/assets/c47f2e47-beb3-4013-a6c5-5fb7ea0a4b70)
+
 🔍 2. Search Page
 ```
 - Pencarian nama tempat wisata atau kota
 - Menggunakan Geoapify Autocomplete API
 - Hasil suggestion langsung tampil
 ```
+![Search 1](https://github.com/user-attachments/assets/853a2f48-50d8-4369-b8a5-141ad3544062)
+![Search 2](https://github.com/user-attachments/assets/e6a368bf-5a70-4c96-84ee-ba9c1a9573ee)
+
 📌 3. Detail Page
 ```
 - Menampilkan detail wisata (nama, alamat, rating, kategori, coordinate)
 - Menggunakan Geoapify Place Details API
 ```
+![Detail](https://github.com/user-attachments/assets/922df1ab-4055-4fb4-862a-466f02ed1c43)
+
 ⭐ 4. Favorite Page
 ```
 - Menyimpan tempat wisata favorit secara offline
 - Menggunakan SharedPreferences / Hive
 ```
+![Favorite](https://github.com/user-attachments/assets/29bd64fe-c118-4c3b-82f2-d2c3d162cfea)
+
 👤 5. Profile Page
 ```
 - Informasi tentang aplikasi
 - API yang digunakan
 - Versi aplikasi
 ```
+![Profile Aplikasi](https://github.com/user-attachments/assets/97308ab1-5b6b-4ef6-aa06-d999e913a619)
+
 ## 🌐 API yang Digunakan (Geoapify)
 Berikut endpoint wajib yang digunakan aplikasi:
 
@@ -125,6 +136,14 @@ halaman Home, Search, Detail, Favorite, Profile
 
 Aplikasi menangani tiga state:
 - Loading → CircularProgressIndicator
+  ![Loading](https://github.com/user-attachments/assets/a6f4ff3c-a7c8-44c2-9060-70678cca2cce)
+
 - Success → data tampil
+  ![Success](https://github.com/user-attachments/assets/75b5ec4c-26e6-49d4-ab4f-81b534ffea0a)
+
 - Error → pesan error / retry button
+  ![Error Handling](https://github.com/user-attachments/assets/4c97e394-f1f3-4bfc-a7ba-131ba98b68fa)
+
 - Empty → jika API tidak mengembalikan data
+  ![Empty](https://github.com/user-attachments/assets/ed1db458-3475-4f21-836f-ab1546320b66)
+
