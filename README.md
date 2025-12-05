@@ -141,12 +141,13 @@ Aplikasi menangani tiga state:
 - Success → data tampil
   ![Success](https://github.com/user-attachments/assets/75b5ec4c-26e6-49d4-ab4f-81b534ffea0a)
 
-## Link Video YouTube
-https://youtu.be/_Gt1-X0PObg
-
 - Error → pesan error / retry button
   ![Error Handling](https://github.com/user-attachments/assets/4c97e394-f1f3-4bfc-a7ba-131ba98b68fa)
 
 - Empty → jika API tidak mengembalikan data
   ![Empty](https://github.com/user-attachments/assets/ed1db458-3475-4f21-836f-ab1546320b66)
 
+
+
+## Link Video YouTube
+https://youtu.be/_Gt1-X0PObg
